@@ -35,15 +35,6 @@ db.connect ((err) => {
         res.render("index", { users: users, title :"Repostitory Mahasiswa" })
     })
 
-    //untuk hapus data
-    //app.post("/hapus", (req,res)=>{
-       // const sql = `DELETE FROM user WHERE id=?`
-       // const id = 8
-        //db.run(sql, [id], (err) =>{
-           // if (err) throw err
-            //res.redirect("/");  
-      //  })
-   // })
             // untuk insert data
             app.post("/tambah", (req, res) => {
                 const insertSql = `INSERT INTO user (nama, kelas) VALUES ('${req.body.nama}', '${req.body.kelas}');`
@@ -53,8 +44,6 @@ db.connect ((err) => {
     
                 }) 
             })
-
-            
 
     
         
