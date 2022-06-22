@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repostitory Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <div id="preloader">
+      <div id="loader" class="dots-fade">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </div>
+    <style >
+      h3 {
+        text-align: left;
+          }
+
+      .item{
+          width: 80px;
+      }
+      li{            
+          width: 400px;        
+      }         
+      .main{
+          padding: 200px;  
+          margin-left:50px;      
+      }  
+      .myBtn{
+          padding: 20px 10px;
+      }       
+      
+      .buton{
+          width: 120px;
+      }
+      .edit{
+          position: absolute;
+          left:0;
+          top: 0;
+          padding: 16px 18px;
+          height: 100%;
+          color: black;
+      }   
+      .edit:hover{
+          background-color: black;
+          color: white;
+      }
+      .trash{
+          right: 0;            
+          position: absolute;            
+          top: 0;
+          padding: 16px 18px;
+          height: 100%;
+          color: black;
+      }          
+      .trash:hover{
+          background-color: black;
+          color: white;
+      }
+      
+
+  </style>
+  
+  </head>
+  <body class="img js-fullheight" >
+    <div class="main">
+          <div class="card text-center">
+    <div class="container">
+    <h2> <%= title %></h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Kelas</th>
+              </tr>
+            </thead>
+                <tbody>
+                    <% for (let user of users) { %>
+                        <tr>
+                            <th scope="row"><%= user.id %></th>
+                            <th scope="row"><%= user.nama %></th>
+                            <th scope="row"><%= user.kelas %></th>
+                        </tr>
+                    <% } %>
+                </tbody>
+        </table>
+        <div align-items-left>
+        <h3>Tambah Data Mahasiswa Baru </h3>
+      </div>
+        <form action="/tambah" method="post" class="row gy-2 gx-3 align-items-left">
+            <div class="col-auto">
+              <label for="nama" class="visually-hidden" >Name</label>
+              <input type="text" name="nama" class="form-control"  placeholder="Masukkan Nama">
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden">Kelas</label>
+              <select class="form-select" name="kelas">
+                <option selected>Pilih Kelas</option>
+                <option value="PTIK-A">PTIK-A</option>
+                <option value="PTIK-B">PTIK-B</option>
+                <option value="PTIK-C">PTIK-C</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+    </div>
+    </div>
+    
+          </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
